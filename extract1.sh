@@ -2,4 +2,4 @@
 
 INFILE="iMsOB3b.json"
 
-jq '.metabolites | .[] | [ .id, .name, .charge, .formula, .annotation.inchi ] | @tsv' "$INFILE"
+jq -r '.metabolites | .[] | [ .id, .name, .charge, .formula, .annotation.inchi ] | @tsv' "$INFILE"
