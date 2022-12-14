@@ -5,4 +5,4 @@ OUTFILE="iMsOB3b.tsv"
 
 echo "id	name	charge	formula	inchi	upa" > $OUTFILE
 
-jq -r '.metabolites | .[] | [ .id, .name, .charge, .formula, .annotation.inchi, .annotation.upa ] | @tsv' $INFILE >> $OUTFILE
+jq -r -f extract_metabolites.jq $INFILE >> $OUTFILE
